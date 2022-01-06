@@ -39,6 +39,7 @@ func roomGET(c *gin.Context) {
 	if len(nick) > 13 {
 		nick = nick[0:12] + "..."
 	}
+	fmt.Println(c.ClientIP())
 	c.HTML(http.StatusOK, "room_login.templ.html", gin.H{
 		"roomid":    roomid,
 		"nick":      nick,
