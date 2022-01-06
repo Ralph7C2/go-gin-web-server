@@ -27,7 +27,7 @@ func rateLimit(c *gin.Context) {
 }
 
 func index(c *gin.Context) {
-	c.Redirect(http.StatusMovedPermanently, "/room/hn")
+	c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/room/hn?ip=%s",c.ClientIP()))
 }
 
 func roomGET(c *gin.Context) {
